@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Exercise</title>
+  <script>
+    function formValidation(){
+      var name = document.form1.name;
+      if(name.value == ""){
+        alert("이름을 입력하세요");
+        name.focus();
+        return false;
+      }
+      var age = document.form1.age;
+      if(age.value == "" || age.value <= 0){
+        alert("나이를 입력하세요");
+        age.focus();
+        return false;
+      }
+    }
+    window.onload = function() {
+      today = new Date();
+      today = today.toISOString().slice(0, 10);
+
+      bir = document.getElementById("date");
+      bir.value = today;
+    }
+  </script>
+</head>
+<body>
+<div class="">
+  <div id="top">
+    <h1>Form Exercise by Daeseok Kim</h1>
+    <p>21800059</p>
+  </div>
+  <div class="">
+    <div id="center">
+      <h2>Name</h2>
+      <form name="form1" action="/myHome/form_ok.php" onsubmit="return formValidation()" method="post">
+        <label for="fname">Fisrt name:</label><br>
+        <input type="text" id="fname" name="fname"> </br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname"><br>
+        <h2>Color</h2>
+        <label for="color">Color:</label><br>
+        <input type="color" id="color" name="color" value='#0000ff'>
+        <h2>Gender</h2>
+        <input type="radio" id="male" name="gender" value="Male" checked>
+        <label for="male">남자</label>
+        <input type="radio" id="female" name="gender" value="Female">
+        <label for="female">여자</label>
+
+        <h2>Age</h2>
+        Age:  <input type="number" name="age" >
+
+        <h2>Favorite language</h2>
+        <fieldset>
+          <legend>Choose your favorite language</legend>
+          <input type="checkbox" id="c" name="fav_language[]" value="C">
+          <label for="c">C</label>
+          <input type="checkbox" id="c++" name="fav_language[]" value="C++">
+          <label for="c++">C++</label>
+          <input type="checkbox" id="java" name="fav_language[]" value="Java">
+          <label for="java">Java</label>
+          <input type="checkbox" id="python" name="fav_language[]" value="Python">
+          <label for="python">Python</label>
+        </fieldset>
+        <h2>Birthday</h2>
+        <label for="birthday">Birthday: </label>
+        <input type="date" id="birthday" name="birthday">
+        <br>
+        <h2>학부</h2>
+        <li>
+          <label class="reg" for="uclass">학부</label>
+          <select id="uclass" name="uclass">
+            <optgroup label="공학부">
+              <option value="공간환경시스템공학부">공간환경시스템공학부</option>
+              <option value="기계제어공학부">기계제어공학부</option>
+              <option value="전산전자공학부" selected>전산전자공학부</option>
+            </optgroup>
+            <optgroup label="인문사회과학부">
+              <option value="법학부">법학부</option>
+              <option value="커뮤니케이션학부">커뮤니케이션학부</option>
+              <option value="경영경제학부">경영경제학부</option>
+            </optgroup>
+            <optgroup label="융합학부">
+              <option value="글로벌리더십학부">글로벌리더십학부</option>
+              <option value="ICT창업학부">ICT창업학부</option>
+              <option value="창의융합교육원">창의융합교육원</option>
+              <option value="AI융합교육원">AI융합교육원</option>
+            </optgroup>
+          </select>
+        </li>
+        <h2>성적 :</h2>
+        <input type="text" name="grade" list="depList"><br>
+        <datalist id="depList">
+          <option value="A+"></option>
+          <option value="A0"></option>
+          <option value="B+"></option>
+          <option value="B0"></option>
+          <option value="C+"></option>
+          <option value="C0"></option>
+          <option value="F"></option>
+        </datalist>
+
+        <h2>Comments</h2>
+        <label for="comment">Comment: </label><br>
+        <textarea type="content" id="comment" name="comment" cols="20" rows="5"></textarea><br>
+        <input type="submit" name="Submit">
+      </form>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
