@@ -37,7 +37,7 @@
   <div class="">
     <div id="center">
       <h2>Name</h2>
-      <form name="form1" action="/myHome/form_ok.php" onsubmit="return formValidation()" method="post">
+      <form name="form1" action="form_ok.jsp" onsubmit="return formValidation()" method="post">
         <label for="fname">Fisrt name:</label><br>
         <input type="text" id="fname" name="fname"> </br>
         <label for="lname">Last name:</label><br>
@@ -57,13 +57,13 @@
         <h2>Favorite language</h2>
         <fieldset>
           <legend>Choose your favorite language</legend>
-          <input type="checkbox" id="c" name="fav_language[]" value="C" checked>
+          <input type="checkbox" id="c" name="fav_language[0]" value="C" checked>
           <label for="c">C</label>
-          <input type="checkbox" id="c++" name="fav_language[]" value="C++">
+          <input type="checkbox" id="c++" name="fav_language[1]" value="C++">
           <label for="c++">C++</label>
-          <input type="checkbox" id="java" name="fav_language[]" value="Java">
+          <input type="checkbox" id="java" name="fav_language[2]" value="Java">
           <label for="java">Java</label>
-          <input type="checkbox" id="python" name="fav_language[]" value="Python">
+          <input type="checkbox" id="python" name="fav_language[3]" value="Python">
           <label for="python">Python</label>
         </fieldset>
         <h2>Birthday</h2>
