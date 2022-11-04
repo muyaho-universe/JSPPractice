@@ -5,10 +5,11 @@
   <title>Form Exercise</title>
   <script>
     function formValidation(){
-      var name = document.form1.name;
-      if(name.value == ""){
+      var fname = document.form1.fname;
+      var lname = document.form1.lname;
+      if(fname.value == "" || lname.value == ""){
         alert("이름을 입력하세요");
-        name.focus();
+        fname.focus();
         return false;
       }
       var age = document.form1.age;
@@ -56,7 +57,7 @@
         <h2>Favorite language</h2>
         <fieldset>
           <legend>Choose your favorite language</legend>
-          <input type="checkbox" id="c" name="fav_language[]" value="C">
+          <input type="checkbox" id="c" name="fav_language[]" value="C" checked>
           <label for="c">C</label>
           <input type="checkbox" id="c++" name="fav_language[]" value="C++">
           <label for="c++">C++</label>
