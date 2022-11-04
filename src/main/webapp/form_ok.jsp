@@ -4,7 +4,7 @@
   request.setCharacterEncoding("utf-8");
   String firstName = request.getParameter("fname");
   String lastName = request.getParameter("lname");
-  Color color = Color.decode(request.getParameter("color"));
+  String color = request.getParameter("color");
   String age = request.getParameter("age");
   String gender = request.getParameter("gender");
   String birthday = request.getParameter("birthday");
@@ -14,7 +14,16 @@
   String cpp_lang = request.getParameter("fav_language[1]");
   String java_lang = request.getParameter("fav_language[2]");
   String python_lang = request.getParameter("fav_language[3]");
+  String ment =c_lang + ", " + java_lang + ", " + cpp_lang +", " + python_lang ;
   String grade = request.getParameter("grade");
+//  if(c_lang.isEmpty() && cpp_lang.isEmpty() && java_lang.isEmpty() && python_lang.isEmpty()){
+//    ment = "No language I can do";
+//  } else{
+//    if(!c_lang.isEmpty()) ment += c_lang +", ";
+//    if(!cpp_lang.isEmpty()) ment += cpp_lang +", ";
+//    if(!java_lang.isEmpty()) ment += java_lang +", ";
+//    if(!python_lang.isEmpty()) ment += python_lang +".";
+//  }
 %>
 
 <!DOCTYPE html>
@@ -37,17 +46,16 @@
   <div>Gender : <%=gender%> </div>
   <div>Age: <%=age%></div>
   <div>Favorite language:
-    <%if(c_lang.isEmpty() && cpp_lang.isEmpty() && java_lang.isEmpty() && python_lang.isEmpty()){
 
-    }%>
+    <%=ment%>
 
   </div>
-  <div>Birthday: <?=$birthday?></div>
-  <div>Major: <?=$major?></div>
-  <div>Grade: <?=$grade?></div>
+  <div>Birthday: <%=birthday%></div>
+  <div>Major: <%=major%></div>
+  <div>Grade: <%=grade%></div>
   <div>
     Comment:<br>
-    <?=$comment?>
+    <%=comment%>
   </div>
 </div>
 
